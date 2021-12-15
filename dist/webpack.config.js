@@ -7,7 +7,7 @@ module.exports = {
   mode: 'development',
   entry: path.join(__dirname, "src", "index.js"),
   output: {
-    filename: 'index.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
@@ -17,7 +17,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'index.css'
+      filename: '[name].css'
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
@@ -41,5 +41,32 @@ module.exports = {
         }
       },
     ]
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        reacts: {
+          test: (module)=>{
+            return /react|react-dom|react-router-dom/.test(module.context);
+          },
+          name: 'reacts',
+          chunks: 'all',
+        },
+        modules: {
+          test: (module)=>{
+            return /module-1|module-2|module-comon/.test(module.context);
+          },
+          name: 'modules',
+          chunks: 'all',
+        },
+        commons: {
+          test: (module)=>{
+            return /node_modules/.test(module.context);
+          },
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
   },
 }
