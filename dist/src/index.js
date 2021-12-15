@@ -1,16 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {CommonComponent} from 'module-common';
-// import 'antd/dist/antd.css';
-// import {Module1Component} from 'module-1';
-// import {Module2Component} from 'module-2';
+import Main from './main';
 
 ReactDOM.render(
-	<div>
-		<CommonComponent />
-		{/*<Module1Component/>*/}
-		{/*<Module2Component/>*/}
-	</div>,
-	// <div>Hello</div>,
-	document.getElementById('root')
+    <div>
+        <Main/>
+    </div>,
+    document.getElementById('root')
 );

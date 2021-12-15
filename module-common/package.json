@@ -7,16 +7,20 @@
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist"
+  ],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "react": "^17.0.2"
-  },
   "browserslist": [
     "last 1 version",
     "> 1%",
     "IE 10"
   ],
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "antd": "^4.17.3"
+  },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",

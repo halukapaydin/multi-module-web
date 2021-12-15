@@ -11,7 +11,12 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
     library: {
-      type : 'esm'
+      type : 'commonjs'
+    }
+  },
+  resolve: {
+    alias: {
+      react: path.resolve(__dirname, 'node_modules/react'),
     }
   },
   devtool: 'cheap-module-source-map',

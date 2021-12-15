@@ -1,4 +1,4 @@
-import CommonComponent from './components/CommonComponent.jsx';
+import CommonComponent1 from './components/CommonComponent1.jsx';
 export {
-	CommonComponent	
+	CommonComponent1
 }
