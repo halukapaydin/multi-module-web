@@ -13,11 +13,6 @@ module.exports = {
       type : 'commonjs'
     }
   },
-  resolve: {
-    alias: {
-      react: path.resolve(__dirname, 'node_modules/react'),
-    }
-  },
   devtool: 'cheap-module-source-map',
   module: {
     rules: [
